@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2>สิ่งที่สนใจ</h2>
+        <div id = "content">
+        </div>
+</div>
+<input type = "checkbox" name="Interest" value="กีฬา">กีฬา
+<input type = "checkbox" name="Interest" value="ดนตรี">ดนตรี
+<input type = "checkbox" name="Interest" value="อาหาร">อาหาร
+<input type = "checkbox" name="Interest" value="เทคโนโลยี">เทคโนโลยี
+<button onclick="SubmitInterrest()">แสดงสิ่งที่สนใจ</button>  
+    <script>
+        /*
+        // ใช้คำสั่ง document.getElementById เพื่อเข้าถึง element ที่มี id เป็น firstname และ lastname
+        // และใช้คำสั่ง console.log เพื่อแสดงค่าของ element ที่เราเข้าถึงได้
+        let inputsDOM = document.getElementsByClassName('input');
+        console.log(inputsDOM);
+        for(let i = 0; i < inputsDOM.length; i++){
+            console.log(inputsDOM[i].value);
+        }
+        */
+        /*
+        // ใช้คำสั่ง document.querySelectorAll เพื่อเข้าถึง element ที่มี name เป็น Interest
+       let checkboxInputs = document.querySelectorAll('input[name="Interest"]');
+           for(let i = 0; i < checkboxInputs.length; i++){
+                console.log(checkboxInputs[i].value);
+           };
+        */
+
+        /*
+    function ChangeGender(){
+        // เลือก gender ทุก input ออกมา
+        let genders = document.querySelectorAll('input[name=gander]');
+        let gender = '';
+        //ใครมี check หมายความว่าเพศนั้นถูกเลือก
+        for (let i = 0; i < genders.length; i++){
+            if(genderInputs[i].checked){
+    }
+}
+    console.log(   'selected gender ',gender);
+    
+}
+    */
+
+     /*
+    function ChangeFirstName(){
+        // เลือกไปยัง input firstname
+        let firstnameDOM = document.querySelector('input[name = firstname]');
+        // เอา value ของ firstname ออกมา
+        console.log('change firstname',firstnameDOM.value);
+    }
+    */
+   function SubmitInterrest(){
+    //เลือก checkbox ทั้งหมด
+    let InterestDOM = document.querySelectorAll('input[name=Interest]');
+    let contentHTML = '<ul>';
+    //เอสค่าออกมาเฉพาะทุดที่เราเลือกไว้ที่ array
+    for (let i = 0; i < InterestDOM.length; i++){
+        if(InterestDOM[i].checked){
+            contentHTML += '<li>' + InterestDOM[i].value + '<br>';
+        }
+    }
+    //วนค่าตัวที่เลือกใส่ html กลับไป
+    contentHTML += '</ul>';
+    // console.log(contentHTML);
+
+    //ใส่ HTML ใน content
+    let contentDOM = document.getElementById('content');
+    contentDOM.innerHTML = contentHTML;
+   }
+   </script>
+    
+</body>
+</html>
+                             
