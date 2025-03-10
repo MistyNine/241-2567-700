@@ -158,4 +158,4 @@ app.delete('/users/:id', async(req, res) => {
 app.listen(port, async (req, res) => {
     await initMySQL()
     console.log('Http Server is running on port' + port)
-});
+})
