@@ -24,11 +24,10 @@ const loadData = async () => {
         <td>${user.interests}</td>
         <td>${user.description}</td>
         <td>
-            <a href = 'index.html?id=${user.id}'><button>Edit</button></a>        
+            <a href='index.html?id=${user.id}'><button class='edit'>Edit</button></a>    
             <button class='delete' data-id='${user.id}'>Delete</button>
         </td>
-    </tr>  
-    `;
+    </tr>  `;
     }
     htmlData += `</div >`
     userDOM.innerHTML = htmlData

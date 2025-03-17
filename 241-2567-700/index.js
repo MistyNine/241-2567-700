@@ -50,22 +50,22 @@ const validateData = (userData) => {
     let errors = []
 
     if (!userData.firstName) {
-        errors.push('กรุณากรอกชื่อ')
+        errors.push('กรุณากรอกชื่อ ❗')
     }
     if (!userData.lastName) {
-        errors.push('กรุณากรอกนามสกุล')
+        errors.push('กรุณากรอกนามสกุล ❗')
     }
     if (!userData.age) {
-        errors.push('กรุณากรอกอายุ')
+        errors.push('กรุณากรอกอายุ ❗')
     }
     if (!userData.gender) {
-        errors.push('กรุณาเลือกเพศ')
+        errors.push('กรุณาเลือกเพศ ❗')
     }
     if (!userData.interests) {
-        errors.push('กรุณาเลือกความสนใจ')
+        errors.push('กรุณาเลือกความสนใจ ❗')
     }
     if (!userData.description) {
-        errors.push('กรุณากรอกคำอธิบาย')
+        errors.push('กรุณากรอกคำอธิบาย ❗')
     }
     return errors
 }
@@ -110,13 +110,13 @@ const submitData = async () => {
         //         errors: errors
         //     }
         // }
-        let message = 'บันทึกข้อมูลสำเร็จ'
+        let message = 'บันทึกข้อมูลสำเร็จ ✅'
         if (mode == 'CREATE') {
             const response = await axios.post(`${BASE_URL}/users`, userData)
             console.log("response", response.data);
         } else{
             const response = await axios.put(`${BASE_URL}/users/${selectedID}`, userData)
-            message = 'แก้ไขข้อมูลสำเร็จ'
+            message = 'แก้ไขข้อมูลสำเร็จ ✅'
             console.log("response", response.data);
         }    
 

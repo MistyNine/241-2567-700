@@ -27,22 +27,22 @@ const initMySQL = async () => {
 const validateData = (userData) => {
     let errors = [];
     if (!userData.firstName) {
-        errors.push('กรุณากรอกชื่อ');
+        errors.push('กรุณากรอกชื่อ ❗');
     }
     if (!userData.lastName) {
-        errors.push('กรุณากรอกนามสกุล');
+        errors.push('กรุณากรอกนามสกุล ❗');
     }
     if (!userData.age) {
-        errors.push('กรุณากรอกอายุ');
+        errors.push('กรุณากรอกอายุ ❗');
     }
     if (!userData.gender) {
-        errors.push('กรุณาเลือกเพศ');
+        errors.push('กรุณาเลือกเพศ ❗');
     }
     if (!userData.interests) {
-        errors.push('กรุณาเลือกความสนใจ')
+        errors.push('กรุณาเลือกความสนใจ ❗')
     }
     if (!userData.description) {
-        errors.push('กรุณากรอกคำอธิบาย');
+        errors.push('กรุณากรอกคำอธิบาย ❗');
     }
     return errors;
 }
@@ -61,7 +61,7 @@ app.post('/users', async (req, res) => {
         const errors = validateData(user);
         if(errors.length > 0){
             throw{
-                message: 'กรุณากรอกข้อมูลให้ครบ',
+                message: '❗กรุณากรอกข้อมูลให้ครบ❗',
                 errors: errors
             }
         }

@@ -1,6 +1,7 @@
-@font-face{
-    font-family: Kanit;
-    src: url('./Kanit/Kanit-Regular.ttf'); 
+/*ตรงนี้ CSS สำหรับตกแต่ง(id class)*/
+@font-face { 
+    font-family: 'Kanit';
+    src: url('./Kanit/Kanit-Regular.ttf');
 }
 
 
@@ -81,12 +82,15 @@ body {
     background-position: center;
     font-family: "Kanit";
 }
-/*ส่วนข้างบน
-/*body { 
-    background-color: rgb(240, 255, 244);
-    font-family: "Kanit";
+
+
+/*body {
+    font-family: 'Kanit';
+    font-size: 14px;
+    background-color: #FFF2F2;
+    background-image: url('');
 }*/
-.container{
+.container {
     position: relative;
     width: 50%;
     max-width: 640 px;
@@ -99,35 +103,387 @@ body {
     padding:  20px;
     box-sizing:  border-box;
     backdrop-filter: blur(20px);
-     justify-content: center;
+    justify-content: center;
     align-items: center;
-
 }
 
-.user-table {
+
+.header {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #FFFFFF;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, 
+        #FFD700, /* เหลืองอ่อน */
+        #FFA500, /* ส้ม */
+        #FF6347, /* แดงอ่อน */
+        #DC143C, /* แดงเข้ม */
+        #800080, /* ม่วง */
+        #4B0082, /* ม่วงเข้ม */
+        #00008B, /* น้ำเงินเข้ม */
+        #00BFFF, /* ฟ้าสด */
+        #00CED1, /* เขียวอมฟ้า */
+        #90EE90  /* เขียวอ่อน */
+    );
+    padding: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: rainbow-shift 10s linear infinite;
+    background-size: 400% 100%; /* เพิ่มขนาดพื้นหลังให้ใหญ่ขึ้น */
+}
+
+@keyframes rainbow-shift {
+    0% {
+        background-position: 200% 0; /* เปลี่ยนตำแหน่งเริ่มต้น */
+    }
+    100% {
+        background-position: -200% 0; /* เปลี่ยนตำแหน่งสิ้นสุด */
+    }
+}
+@keyframes rainbow-shift {
+    0% {
+        background-position: 100% 0;
+    }
+    100% {
+        background-position: -100% 0;
+    }
+}
+table {
     border-collapse: collapse;
-    width: 100%;
+    width: 90%; /* ลดความกว้างให้พอดีกับเนื้อหา */
+    margin: 20px auto; /* จัดกึ่งกลางตาราง */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 1px solid #ddd;
+    background: linear-gradient(to bottom, #f0f0f0, #e0e0e0);
 }
 
 th, td {
-    padding: 8px;
-    text-align: left;
-    border-bottom: 1px solid #162938;
-  }
-  th {
-    background-color: #162938;
-    color: white;
-  }
-.form-box h2 {
+    padding: 14px 18px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    color: #333;
+}
 
-    color: #162938;
+th {
+    background-color: #343a40;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+tr:hover {
+    background-color: #e8e8e8;
+    transition: background-color 0.3s ease;
+}
+
+/* ปรับแต่งแถวแรกและแถวสุดท้ายเพื่อให้เข้ากับ border-radius */
+tr:first-child th:first-child,
+tr:first-child td:first-child {
+    border-top-left-radius: 10px;
+}
+
+tr:first-child th:last-child,
+tr:first-child td:last-child {
+    border-top-right-radius: 10px;
+}
+
+tr:last-child td:first-child,
+tr:last-child th:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+tr:last-child td:last-child,
+tr:last-child th:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+th, td {
+    padding: 12px 15px; /* เพิ่ม padding เล็กน้อย */
+    text-align: center;
+    border-bottom: 1px solid #eee; /* เปลี่ยนสีเส้นขอบเป็นสีเทาอ่อนมาก */
+    color: #333; /* เปลี่ยนสีตัวอักษรเป็นสีเทาเข้ม */
+}
+
+th {
+    background-color: #f0f0f0; /* สีพื้นหลัง header อ่อน */
+    font-weight: 500; /* ลดความหนาของตัวอักษร */
+    text-transform: none; /* ไม่ต้องเป็นตัวพิมพ์ใหญ่ */
+    letter-spacing: 0; /* ลดระยะห่างตัวอักษร */
+}
+/*th{
+    color: #F7EFE5;
+    background-color: #674188;
+}*/
+tr:nth-child(odd) {
+    background-color: #f0f8ff; /* สีฟ้าอ่อน */
+    /* หรือใช้สีเทาอ่อน */
+    /* background-color: #f8f8f8; */
+}
+
+/* ปรับแต่งปุ่ม Edit และ Delete */
+.edit, .delete {
+    border: none;
+    background: linear-gradient(135deg, #343a40, #212529);
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 14px;
+    margin: 5px 10px; /* เพิ่ม margin บน-ล่าง 5px และซ้าย-ขวา 10px */
+    padding: 8px 15px;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.edit:hover, .delete:hover {
+    background: linear-gradient(135deg, #212529, #343a40);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+    transform: translateY(-3px);
+}
+
+.header-back{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #2A2F4F;
+    font-weight:900;
+    background-color: #F7A8C4;
+    padding: 10px ;
+}
+.info {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #FFFFFF; /* เปลี่ยนสีตัวอักษรเป็นขาว */
+    font-weight: 600;
+    background: linear-gradient(135deg, #FF6B6B, #FFD700); /* ไล่สีจากแดงไปเหลือง */
+    padding: 10px 15px;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s ease-in-out;
+}
+
+.info:hover {
+    background: linear-gradient(135deg, #FFD700, #FF6B6B); /* เปลี่ยนสีพื้นหลังเมื่อ hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+    transform: translateY(-3px);
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.info.animate {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+.header-form{
+    font-weight: bold;
+    font-size: 15px;
+    width: 140px;
+    color: #2D336B;
+}
+.header-des{
+    font-weight: bold;
+    font-size: 15px;
+    width: 140px;
+    color: #2D336B;
+    margin-bottom: 10px;
+}
+.flex{
+    display: flex;
+    align-items: center; /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+    gap: 15px; /* เพิ่มช่องว่างระหว่างแต่ละกล่อง */
+    
+    
+}
+.flex input[type="radio"] {
+    margin-right: 5px; /* เพิ่มระยะห่างระหว่าง Checkbox กับข้อความ */
+    color: black; /* ตัวอักษรสีดำ */
+    font-weight: bold;
+    animation: darkNeonBlink 1s infinite alternate; /* กระพริบทุก 1 วินาที */
+}
+@keyframes darkNeonBlink {
+    0%, 100% {
+        color: black; 
+        text-shadow: none;
+        filter: brightness(100%);
+    }
+    50% {
+        color: black;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.8), 
+                     0 0 20px rgba(0, 0, 0, 0.6), 
+                     0 0 40px rgba(0, 0, 0, 0.4);
+        filter: brightness(50%);
+    }
+}
+
+.line {
+    color: black; /* ตัวอักษรสีดำ */
+    font-weight: bold;
+    animation: darkNeonBlink 1s infinite alternate; /* กระพริบทุก 1 วินาที */
+}
+.form-input{
+    margin-bottom: 10px;
+}
+
+input.form, textarea{
+    border: 2px solid rgb(255, 255, 255); /* เส้นขอบสีดำ */
+    width: 100%;
+    padding: 12px 15px; /* เพิ่มพื้นที่ภายใน */
+    border-radius: 8px; /* มุมโค้งมน */
+    font-size: 16px; /* ขนาดตัวอักษร */
+    font-family: 'Arial', sans-serif; /* ฟอนต์ */
+    background-color: #F9F9F9; /* พื้นหลังเบาๆ */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* เงานุ่มๆ */
+    transition: all 0.3s ease; /* เอฟเฟกต์การเปลี่ยนแปลงอย่างนุ่มนวล */
+    
+}
+
+
+textarea:focus, input:focus{
+    background-color: #ffffff; /* พื้นหลังสีชมพูอ่อนเมื่อโฟกัส */
+    border-color: #ffffff; /* เส้นขอบเปลี่ยนเป็นสีชมพูเข้มเมื่อโฟกัส */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* เพิ่มเงาสีชมพูเข้มเมื่อโฟกัส */
+    outline: none; /* ลบเส้นขอบที่มาจากเบราว์เซอร์ */
+}
+.center{
     text-align: center;
 }
-.container .form-box{
-    width: 100%;
-    padding: 40px;
+
+.button {
+    background: linear-gradient(45deg, #ADD8E6, #00008B); /* ฟ้าอ่อน -> ฟ้าเข้ม */
+    color: white;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 191, 255, 0.4); /* เงาสีฟ้า */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    text-align: center;
+    position: relative; /* เพิ่มตำแหน่ง relative เพื่อให้สามารถใช้ ::before ได้ */
+    overflow: hidden; /* ซ่อนส่วนที่เกินออกมา */
 }
 
+.button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8f00ff, #ff0000); /* ไล่สีรุ้ง */
+    animation: rainbow-blink 5s linear infinite; /* สร้างอนิเมชัน */
+    z-index: -1; /* ให้สีรุ้งอยู่ด้านหลังปุ่ม */
+    transform: translateX(-50%); /* เริ่มต้นให้สีรุ้งอยู่กึ่งกลาง */
+}
+
+.button:hover {
+    background: linear-gradient(45deg, #1E90FF, #00BFFF);
+    box-shadow: 0 6px 15px rgba(0, 191, 255, 0.6);
+    transform: translateY(-3px);
+}
+
+@keyframes rainbow-blink {
+    0% {
+        transform: translateX(-50%);
+        opacity: 1; /* เริ่มต้นด้วยความสว่าง */
+    }
+    50% {
+        opacity: 0.2; /* หรี่แสงลง */
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1; /* กลับมาสว่าง */
+    }
+}
+input:focus{
+    background-color: #E5BEEC;
+    
+}
+/* ปรับแต่งกล่องข้อความ */
+.message {
+    background: linear-gradient(135deg, #f0f8ff, #e0f2fe); /* ไล่สีฟ้าอ่อน */
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: fadeInUp 0.5s forwards;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* กล่องข้อความสำหรับข้อความสำเร็จ */
+.message.success {
+    background: linear-gradient(135deg, #e2fce2, #c2f0c2); /* ไล่สีเขียวอ่อน */
+    border-left: 5px solid #28a745;
+    color: #155724;
+}
+
+/* กล่องข้อความสำหรับข้อความผิดพลาด */
+.message.danger {
+    background: linear-gradient(135deg, #fce2e2, #f0c2c2); /* ไล่สีแดงอ่อน */
+    border-left: 5px solid #dc3545;
+    color: #721c24;
+}
+
+@media screen and (max-width: 768px) {
+    .flex{
+        flex-direction: column;
+    }
+    .header{
+        font-size: 24px;
+    }
+}
 .input-box {
     position: relative;
     width: 100%;
@@ -162,63 +518,24 @@ th, td {
     top: -5px;
 }
 
-.header-form{
-    width: 170px;
-}
-.flex{
-    display: flex;
-    justify-content: space-between;
-    margin-right: 2px;
-}
-.form-input{
-    margin-bottom: 10px;
-}
-
-.input-box textarea{
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    border:none;
-    outline: none;
-    font-size: 1em ;
-    color: #162938;
-    font-weight: 600;
-    padding: 0 35px 5px; 
+.small-button {
+    display: inline-block; /* ทำให้เป็น inline-block เพื่อจัดให้อยู่ในบรรทัดเดียวกับองค์ประกอบอื่น */
+    padding: 10px 20px; /* เพิ่ม padding */
+    font-size: 16px; /* ปรับขนาดตัวอักษร */
+    font-weight: 600; /* กำหนดความหนาของตัวอักษร */
+    text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+    text-decoration: none; /* ลบเส้นใต้ */
+    color: #fff; /* สีตัวอักษร */
+    background-color: #007bff; /* สีพื้นหลัง */
+    border: none; /* ลบเส้นขอบ */
+    border-radius: 5px; /* เพิ่มขอบมน */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* เพิ่มเงา */
+    transition: background-color 0.3s ease; /* เพิ่ม transition เพื่อความนุ่มนวล */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* เปลี่ยนฟอนต์ */
+    transition: all 0.3s ease; /* เพิ่ม transition */
 }
 
-
-/*
-.center{
-    text-align: center;
-}
-.button{
-    border: 0;
-    width: 65%;
-    height: 30px;
-}*/
-.message{
-    margin-top: 20px;
-    padding: 10px;
-    background-color:lightgray;
-    display: none;
-}
-.message.success{
-    background-color : lightgreen;
-    display: block;
-}
-.message.danger {
-    background-color : lightcoral;
-    display: block;
-}
-
-@media screen and  (max-width : 768px){
-    .flex{
-        flex-direction: column;
-    }
-    .header{
-        font-size: 24px;
-    }
-    .button{
-        width: 100%;
-    }
+.small-button:hover {
+    background-color: #0056b3; /* เปลี่ยนสีพื้นหลังเมื่อ hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* เพิ่มเงาเมื่อ hover */
 }
