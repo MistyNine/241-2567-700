@@ -1,14 +1,36 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>User Management</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <a href="index.html">Back to register</a>
-    User management page
-    <div id="user"></div>
+    <div class="container">
+        <h2 class="header">User Management</h2>
+        <a href="index.html" class="small-button">Back to register</a>
+        <div id="loading" style="display:none;">Loading...</div>
+        <table id="user-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>FirstName</th>
+                    <th>LastName</th>
+                    <th>Age</th>
+                    <th>Sex</th>
+                    <th>Interests</th>
+                    <th>Description</th>
+                    <th>Change</th>
+                </tr>
+            </thead>
+            <tbody id="user"> 
+               
+            </tbody>
+        </table>
+        <div id="error-message" class="message danger" style="display:none;"></div> 
+    </div>
+    
     <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
     <script src="user.js"></script>
 </body>

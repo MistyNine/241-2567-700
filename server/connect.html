@@ -6,15 +6,14 @@
     <title>Document</title>
 </head>
 <body>
-    <script>
+    <script>    
         fetch('http://localhost:8000/users')
-        .then ( (response)=> {
-                 return response.json();
+        .then(response => { return  response.json();
         })
-        .then((responseData)=>{
-                console.log('responseData',responseData);
+        .then((responseData) => {
+            console.log(responseData,responseData);
         })
-        </script>
+    </script>
     
 </body>
 </html>

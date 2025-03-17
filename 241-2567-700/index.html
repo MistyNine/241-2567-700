@@ -1,68 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel = "stylesheet" href = "style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+        <header>
+            <h2 class="logo">💗 Welcome 💗</h2>
+            <nav class="navigation">
+              <a href="#">Home</a>
+              <a href="#">About</a>
+              <a href="#">Services</a>
+              <a href="#">Contact</a>
+              <button class="btnLogin-popup">Login</button>
+            </nav>
+          </header>
+
+
+
     <div class="container">
-        <div class ="header" > 
-            Register From 
+        <div class="form-box register">  
+            <h2>🐳 Register 🐳</h2>
+            <form action="#">
+                <div class="input-box">
+                    <input class="form" name="firstname" type="text"required> 
+                    <label>Firstname</label>
+                </div>
+        
+                <div class="input-box">
+                    <input class="form" name="lastname" type="text" required> <br>
+                    <label>Lastname</label> 
+                </div>
+
+                <div class="input-box">
+                    <input class="form" name="age"  type="number" required> 
+                    <label>Age</label> 
+
+                </div>
+                
+        <div class="flex form input">
+            <div class="header-form"> Sex </div>
+            <div class="flex">
+            <div><input name="gender"  type="radio"     value="ชาย"> Male</div>
+            <div><input name="gender"  type="radio"     value="หญิง"> Female</div>
+            <div><input name="gender"  type="radio"     value="ไม่ระบุ" > ไม่ระบุ</div>
+             </div>
         </div>
-        <div class="flex form-input">
-            <div class="header-form">ชื่อ</div>
-            <input class="form" name="firstname" type="text"> 
-        </div>
-        <div class="flex form-input">
-            <div class="header-form">นามสกุล</div>
-            <input class="form" name="lastname"  type="text"> 
-        </div>
-        <div class="flex form-input">
-            <div class="header-form">อายุ</div>
-            <input class="form" name="age" type="number" min = " 0"max = "100">
-        </div>
+        
+        <div class="flex form input">
+            <div class="header-form"> Interests </div>
+            <div class="flex">
+            <input name="interest"  type="checkbox" value="อ่านหนังสือ" > อ่านหนังสือ 
+            <input name="interest" type="checkbox" value="ดูหนัง"> ดูหนัง  
+            <input name="interest" type="checkbox"  value="ฟังเพลง"> ฟังเพลง 
+            </div>
+         </div>
+        
+            <label>Description</label> 
+            <div class=" input-box" >
+            <textarea name="description"></textarea> 
+            </div>
+
+
+        <div id = message class="message"></div>
     
-        <div class=" flex gender form-input">
-           <div class="header-form">เพศ</div>
-           <div class = flex>
-            <div>
-               <input  name = "gender" type="radio" value="ชาย"> ชาย
-            </div>
-            <div>
-               <input name = "gender" type="radio" value="หญิง"> หญิง
-            </div>
-            <div>
-               <input  name = "gender" type="radio"value="อื่นๆ"> อื่นๆ
-            </div>
-           </div>
-        </div>
-           <div class="form-input">
-            <div class="header-form">งานอดิเรก</div>
-            <div>
-                <input  name = "interest" type="checkbox" value="อ่านหนังสือ"> อ่านหนังสือ
-            </div>
-            <div>
-                <input name = "interest" type="checkbox" value="ดูหนัง" > ดูหนัง
-            </div>
-            <div>
-                <input  name = "interest" type="checkbox" value="ฟังเพลง"> ฟังเพลง
-            </div>
-            </div>
-            <div class="form-input">
-               คำอธิบาย
-            <textarea name="description"></textarea>
-            </div>
-            
-            <div id = message classs = "message"></div>
-
-            <div class="center">
-                <button onclick ="submitData()" class="button"> ส่งข้อมูล</button>
-            </div>
-    </div>  
-    <script src ="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
-    <script src = "index.js"></script>  
-
+        <div class="center">
+            <button onclick="submitData()" class ="button">ส่งข้อมูล</button>
+          </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+        <script src="index.js"></script>
     </body>
+    </html>
+    
+    <a href="user.html">go to User management</a>
+    
+          
+            </form> 
+        </div>
+
+  
+
+
+    
+
+</body>
+
 </html>
